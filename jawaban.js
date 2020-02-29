@@ -78,7 +78,16 @@
 //angka dan 1 simbol ‘-’ dengan ketentuan banyaknya huruf dan angka harus sama
 //serta panjang total 7-11 karakter
 const regexUser = /^([0-9])([a-z]{3,6})\1$/g;
-const regexPass = /p/
+const regexHuruf = /[a-z]/g; // untuk mengecek banyak huruf
+const regexPass = /^[0-9a-z\-]+$/gi; // set karakter apa saja yang bisa dipakai
+const regexAngka = /[0-9]/g; // untuk mengecek banyak angka
+const regexDash = /\-/g; // untuk mengecek banyak dash
+let userBener = '1aku1';
+let userSalah = '1aku2';
+
+let passBener = '123-abc';
+let passSalah = '12-3-abc';
+
 
 
 function userValid(user){
@@ -88,9 +97,23 @@ function userValid(user){
 }
 
 function passValid(pass){
+    let totalAngka, totalHuruf,totalDash;
     if(pass.length < 7 || pass.length >11){
         console.log('password terdiri 7-11 karakter');
+    }else{
+        
+            totalAngka = pass.match(regexAngka).length; //mendapatkan berapa digit angka
+            totalHuruf = pass.match(regexHuruf).length; // mendapatkan berapa digit huruf
+            totalDash = pass.match(regexDash).length;
+            if(totalAngka === totalHuruf && regexPass.test(pass) && totalDash==1){
+                console.log('true');
+            }else{
+                console.log('false');
+            }
+            
     }
 }
 
-//userValid('1a_d1');
+
+//userValid(userSalah);
+passValid(passSalah);
