@@ -1,4 +1,6 @@
 ////////NOMOR 5/////////////////
+//referensi : https://www.codepolitan.com/mencetak-beragam-pola-dengan-konsep-perulangan-1
+
 let s =''
 function segitiga(input){
     for(let i=1;i<=input;i++){
