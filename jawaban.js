@@ -104,7 +104,7 @@ function passValid(pass){
         
             totalAngka = pass.match(regexAngka).length; //mendapatkan berapa digit angka
             totalHuruf = pass.match(regexHuruf).length; // mendapatkan berapa digit huruf
-            totalDash = pass.match(regexDash).length;
+            totalDash = pass.match(regexDash).length; // mendapatkan berapa digit dash
             if(totalAngka === totalHuruf && regexPass.test(pass) && totalDash==1){
                 console.log('true');
             }else{
