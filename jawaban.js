@@ -61,6 +61,7 @@
 // deret(13);
 // ///////////////////////////////////////////////////////
 // //NOMOR 4 BILANGAN PRIMA 1-30 SEPANJANG INPUTAN N
+//referensi https://www.w3resource.com/javascript-exercises/javascript-function-exercise-8.php (cek bilangan prima)
 // let array = [];
 // let prima;
 // let sum;
